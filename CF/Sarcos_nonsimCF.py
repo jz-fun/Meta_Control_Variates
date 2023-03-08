@@ -1,5 +1,4 @@
-
-from Sarcos.others_sarcos.VI_Full_Bayesian_GP.fb_sarcos_tasks import *
+from Sarcos.VI_Full_Bayesian_GP_GammaPrior.fb_sarcos_tasks import *
 
 from CF.sv_CV import *
 from CF.utils import *
