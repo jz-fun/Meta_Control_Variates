@@ -242,7 +242,6 @@ class MetaNeuralCV():
             'loss': self.qry_losses,
             'MC_2m_ests': self.MC_2m_ests,
             'Abserr_CVests': self.abs_err_meta_cv_ests,
-            # 'Abserr_SimpCVests': self.abs_err_meta_cv_simp_ests,
             'Abserr_MCests': self.abs_err_MC_ests,
             'Abserr_MC_2m_ests': self.abs_err_MC_2m_ests,
             'mode': 'test',
