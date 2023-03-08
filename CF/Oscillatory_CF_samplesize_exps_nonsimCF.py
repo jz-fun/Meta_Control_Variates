@@ -10,10 +10,10 @@ ss_list =[5,10,20,50]
 nss = len(ss_list)
 results_CF_d2 = torch.zeros(nss,n_tests,2)
 for j in range(0,nss,1):
-    K = ss_list[j] # 5 is good with epoch 2000 bs 10; 10 is good with epoch 200 bs 10; 50 is good with (epoch 200 bs 10) ; (all with [80]*2)
+    K = ss_list[j]
     dim=2
     score_dict  = {'SCORE':multivariate_uniform,'dim':dim, 'null_param':0}
-    tasks = Oscillatory_Task_Distribution(dim, 4, 6, 0.4, 0.6, 0, 1) # is good when Oscillatory_Task_Distribution(2, 4.5, 5.5, 0.4, 0.6, 0, 1)
+    tasks = Oscillatory_Task_Distribution(dim, 4, 6, 0.4, 0.6, 0, 1) 
 
     for t in range(n_tests):
         torch.manual_seed(2*(j*n_tests+t)+1)
