@@ -22,15 +22,12 @@ class MetaNeuralCVModel(torch.nn.Module):
         :param K:
         """
         super(MetaNeuralCVModel, self).__init__()
-        # self.K = K
 
         self.dims = h_dims # hidden dim
         self.dims.append(1) # output dim
         self.dims.insert(0, D_in) # input dim
 
-        # self.dims.insert(len(h_dims), 2)
 
-        # self.score_matrix = score_matrix
         self.init_val = init_val
 
 
@@ -43,9 +40,6 @@ class MetaNeuralCVModel(torch.nn.Module):
 
 
     def net_utils(self, x):
-        # ZHUO: it seems that we need set require_grad_ = True
-
-
 
         x.requires_grad_(True)
         y = torch.sigmoid(self.layers[0](x))
@@ -66,14 +60,11 @@ class MetaNeuralCVModel(torch.nn.Module):
         :param ind:
         :return:
         """
-        # score = self.score_matrix[ind]
+
         score = score_x
         eva_net, grads = self.net_utils(x)
-        # y_pred = self.c + grads.sum() + eva_net * score.sum()
-
         y_pred = self.c + grads.sum() + eva_net * score.sum()
-        # y_pred = grads.sum() + (eva_net * score.sum())/1000
-        # y_pred =  grads.sum() + (torch.dot(eva_net, score))/10000
+
         return y_pred
 
 
@@ -130,7 +121,7 @@ class MetaNeuralCV():
 
         # metrics
         self.plot_every = 10
-        self.print_every = 10  #
+        self.print_every = 10  
         self.meta_losses = []
 
 
