@@ -1,4 +1,4 @@
-from discarded.Oscillatory.Oscillatory_Tasks import *
+from Oscillatory_C.Oscillatory_Tasks import *
 from CF.sv_CV import *
 from CF.utils import *
 
@@ -48,5 +48,5 @@ for i in range(nss):
 
 
 # Save
-# torch.save(results_CF_d2_saved, 'results_CF_d2_saved_nonsimCF.pt')
-# torch.save(results_CF_d2_results, 'results_CF_d2_results_nonsimCF.pt')
+torch.save(results_CF_d2_saved, 'results_CF_d2_saved_nonsimCF.pt')
+torch.save(results_CF_d2_results, 'results_CF_d2_results_nonsimCF.pt')
