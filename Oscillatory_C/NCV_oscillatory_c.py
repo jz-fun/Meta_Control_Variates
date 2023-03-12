@@ -48,7 +48,7 @@ class NeuralCVModel(torch.nn.Module):
         :param ind:
         :return:
         """
-        # score = self.score_matrix[ind]
+
         score = score_x
         eva_net, grads = self.net_utils(x)
 
