@@ -23,7 +23,7 @@ class Simplied_CF(object):
         self.score_tensor = score_tensor
 
 
-    # Tune kernel hyper-parameters w.r.t. sum of log marginal likelihood
+    # Tune kernel hyper-parameters w.r.t. log marginal likelihood
     def do_tune_kernelparams_negmllk(self, batch_size_tune, flag_if_use_medianheuristic=False, beta_cstkernel=1, lr=0.1, epochs=100, verbose=True):
         tune_kernelparams_negmllk_obj = TuneKernelParams_mllk_MRI_singledat(self.prior_kernel, self.base_kernel,  self.X_train, self.Y_train, self.score_tensor)
         tune_kernelparams_negmllk_obj.do_optimize_logmll(batch_size_tune, flag_if_use_medianheuristic, beta_cstkernel, lr, epochs, verbose)
