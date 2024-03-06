@@ -38,7 +38,7 @@ def grad_log_prob_multiGaussian(X, mu, Sigma_mat):
 mu = torch.zeros(2, dtype=torch.float64)
 Sigma_mat = torch.tensor([[1, 0.8],[0.8, 1]], dtype=torch.float64)
 Sigma_mat.size()
-X  = torch.tensor(x, dtype=torch.float64)
+X  = torch.tensor(X, dtype=torch.float64)
 X = X.t()
 X.size()
 X[:,0].squeeze().unsqueeze(1)
